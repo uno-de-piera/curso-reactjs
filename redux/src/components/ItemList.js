@@ -2,14 +2,17 @@ import React, { PropTypes } from 'react';
 import Item from './Item';
 
 const ItemList = ({items, onItemClick}) => {
-  <ul className="list-group col-md-6 col-md-offset-3">
-    {items.map(item =>
-      <Item
-        key={item.id}
-        onClick={() => onItemClick(item.id)}
-        {...item}
-    )}
-  </ul>
+  return (
+      <ul className="list-group col-md-6 col-md-offset-3">
+        {items.map(item =>
+            <Item
+                key={item.id}
+                onClick={() => onItemClick(item.id)}
+                {...item}
+            />
+        )}
+    </ul>
+  )
 }
 
 ItemList.propTypes = {
